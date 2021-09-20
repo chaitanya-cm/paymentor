@@ -1,2 +1,2 @@
-# paymentor - TY CSE MINI PROJECT sem-4
+# paymentor - TY CSE MINI PROJECT
 Online Payment and Challan Generation 
