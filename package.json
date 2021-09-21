@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Hemant-Lohar/paymentor/issues"
   },
-  "homepage": "https://github.com/Hemant-Lohar/paymentor#readme"
+  "homepage": "https://github.com/Hemant-Lohar/paymentor#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
