@@ -1,61 +1,58 @@
 const express = require('express');
 const app = express();
+const mysql  = require('mysql');
+const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
-// DB Connection
-var mysql  = require('mysql');
+app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json());
 
-var connection = mysql.createConnection({
+// DB con
+const db = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : '',
   database : 'test'
 });
  
-connection.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected"); 
-});
+db.connect(function(err) {
+    
+    console.log("Connected");
 
-// var sql = "INSERT INTO mytable VALUES ('Hemant', 123456789)";
-
-//     connection.query(sql, function(err, result) {
-//         if(err) throw err;
-//         console.log("Inserted");
-//     });
+})
 
     app.get('/app',(req, res) => {
         
-        connection.query("SELECT * FROM mytable", function(err, result) {
+        db.query("SELECT * FROM mytable", function(err, result) {
         if(err) throw err;
         console.log("Success");
-        
-        
-        
-        // if(result[0].name == "Hemnt")
-        // {console.log("Success")}
-        // else{
-        //     console.log("fail");
-        // }
-        console.log("error");
-        res.send("hi")
-
     })
 })
 
 
+
  
-connection.end();
+db.end();
 
 // PORT
-const port = 5000;
+const port = process.env.PORT || 8000;
 
 app.get('/', (req, res) => {
     console.log("Hello there");
     res.send("Hemant")
 })
 
-// Middlewares
 
+// My Routes
+app.use("/api", authRoutes);
+
+
+// Middlewares
+app.use(bodyParser.json())
+app.use(cookieParser());
+app.use(cors());
 
 // Routes
 
