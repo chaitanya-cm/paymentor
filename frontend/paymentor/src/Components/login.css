@@ -1,0 +1,51 @@
+.title {
+    color: #ffffff;
+    font-size: 2rem; 
+  }
+  
+  .br {
+    border-radius: 5rem 0 0 0;
+  }
+  
+  .bgcolor {
+  background: #4022A6;
+  }
+  
+  .part1 {
+    height: 20%;
+  }
+  
+  .part2 {
+    height: 80%;
+  
+  }
+
+ .form {
+   padding-top: 8rem;
+ }
+
+  .form-group input {
+    background:transparent;
+    border: none;
+    border-bottom: 2px solid rgb(187, 187, 187);
+    border-radius: 0;
+  }
+
+  @media ( min-width:768px ) {
+    .part1 {
+        height: 100%;
+      }
+      
+      .part2 {
+        height: 100%;
+      
+      }
+      .title {
+        color: #ffffff;
+        font-size: 3rem; 
+      }
+      
+      .form {
+        padding-top: 0;
+      }
+  }
